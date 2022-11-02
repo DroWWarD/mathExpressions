@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jr.mathexpressions.HelloController">
+    <children>
+        <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <items>
+                <ScrollPane hbarPolicy="NEVER" prefHeight="-1.0" prefWidth="196.0">
+                    <content>
+                        <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="586.0" prefWidth="227.0">
+                            <children>
+                                <TextArea layoutX="14.0" layoutY="38.0" prefHeight="751.0" prefWidth="185.0" text="На вход подается строка - математическое выражение.&#10;Выражение включает целые и дробные числа, скобки (), пробелы, знак отрицания -, возведение в степень ^, sin(x), cos(x), tan(x)&#10;Для sin(x), cos(x), tan(x) выражение внутри скобок считать градусами, например, cos(3 + 19*3)=0.5&#10;Степень задается так: a^(1+3) и так a^4, что эквивалентно a*a*a*a.&#10;С помощью рекурсии вычислить выражение и количество математических операций. Вывести через пробел результат в консоль.&#10;Результат выводить с точностью до двух знаков, для 0.33333 вывести 0.33, использовать стандартный принцип округления.&#10;Знак отрицания перед числом также считать математической операцией.&#10;Не создавай в классе Solution дополнительные поля.&#10;Не пиши косвенную рекурсию.&#10;&#10;Пример, состоящий из операций sin * - + * +:&#10;sin(2*(-5+1.5*4)+28)&#10;Результат:&#10;0.5 6&#10;&#10;Пример, состоящий из операций tan ^:&#10;tan(2025 ^ 0.5)&#10;Результат:&#10;1 2" wrapText="true" />
+                                <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Рекурсия для мат. выражениях" wrappingWidth="169.91015625" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+                <AnchorPane>
+                    <children>
+                        <AnchorPane layoutX="33.0" layoutY="60.0" />
+                        <Text layoutX="33.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Примеры мат. выражений:" wrappingWidth="175.13671875">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                        <TextArea layoutX="33.0" layoutY="68.0" prefHeight="225.0" prefWidth="600.0" text="&quot;2*(589+((2454*0.1548/0.01*(-2+9^2))+((25*123.12+45877*25)+25))-547)&quot;  -  &quot;8302231.36 14&quot;&#10;&quot;(-1 + (-2))&quot;  -  &quot;-3 3 &quot;&#10;&quot;-sin(2*(-5+1.5*4)+28)&quot;  -  &quot;-0.5 7&quot;&#10;&quot;sin(100)-sin(100)&quot;  -  &quot;0 3&quot;&#10;&quot;-(-22+22*2)&quot;  -  &quot;-22 4&quot;&#10;&quot;-2^(-2)&quot;  -  &quot;-0.25 3&quot;&#10;&quot;-(-2^(-2))+2+(-(-2^(-2)))&quot;  -  &quot;2.5 10&quot;&#10;&quot;(-2)*(-2)&quot;  -  &quot;4 3&quot;&#10;&quot;(-2)/(-2)&quot;  -  &quot;1 3&quot;&#10;&quot;sin(-30)&quot;  -  &quot;-0.5 2&quot;&#10;&quot;cos(-30)&quot;  -  &quot;0.87 2&quot;&#10;&quot;tan(-30)&quot;  -  &quot;-0.58 2&quot;&#10;&quot;2+8*(9/4-1.5)^(1+1)&quot;  -  &quot;6.5 6&quot;&#10;&quot;0.005&quot;  -  &quot;0.01 0&quot;&#10;&quot;0.0049&quot;  -  &quot;0 0&quot;&#10;&quot;0+0.304&quot;  -  &quot;0.3 1&quot;&#10;&quot;sin(45) - cos(45)&quot;  -  &quot;0 3&quot;&#10;&quot;0/(-3)&quot;  -  &quot;0 2&quot;" />
+                        <Text layoutX="33.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Мат. выражение&quot;  -  &quot;ожидаемый результат&quot;" wrappingWidth="568.13671875" />
+                        <TextField fx:id="getData" layoutX="33.0" layoutY="353.0" prefHeight="25.0" prefWidth="600.0" />
+                        <Text layoutX="198.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ВВЕДИТЕ МАТЕМАТИЧЕСКОЕ ВЫРАЖЕНИЕ:" wrappingWidth="238.0859375" />
+                        <Text layoutX="33.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Результат:" />
+                        <Text layoutX="33.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Кол-во математических операций:" />
+                        <Text fx:id="result" layoutX="104.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="504.13671875" />
+                        <Text fx:id="operations" layoutX="239.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="175.13671875" />
+                        <Button fx:id="execute" layoutX="214.0" layoutY="394.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="207.0" text="Вычислить мат. выражение" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</VBox>
